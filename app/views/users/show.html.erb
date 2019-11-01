@@ -1,0 +1,26 @@
+<div class='container-fluid'>
+    <hr/>
+    
+    <div class='container-fluid'>
+        <h1 class='text-center text-primary'>User : <%= @user.first_name %> <%= @user.last_name %></h1>
+        <h3 class='text-center text-secondary'><%= @user.age %> years old, from <%= @user.city.name %></h3>
+    </div>
+    <hr/>
+
+    <div class='container-fluid'>
+        <h4 class='text-primary'>Description</h4>
+        <p><%= @user.description %></p>
+        <hr/>
+        
+        <h4 class='text-primary'>Gossips</h4>
+        <p><% @user.gossips.each do |gossip| %>
+        <a href=<%='/gossip/:id' +  gossip.id.to_s %> ><button type="button" class="btn btn-sm btn-outline-info"><%= gossip.title %></button></a><% end %>
+        </p>
+
+        <%= link_to 'Edit', edit_user_path(@user) %>
+        <td><%= link_to 'Destroy', @user.destroy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </div>
+
+    <hr/>
+
+    </div>

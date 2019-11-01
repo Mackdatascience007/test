@@ -1,0 +1,12 @@
+
+<center>
+<h1><div class="p-3 mb-2 bg-info text-white">Bienvenue sur notre site de POTINS</div></h1>
+    <p><h2>Voici la liste des potins : </h2></p>
+        <% @gossip.each do |gossip|%>
+            <p>Gossip : <%= gossip.title %><p>
+            <p>Auteur : <%= gossip.user.first_name %></p>
+        <%= link_to "Détails", gossip_path(gossip[:id]) %>
+            <hr/>
+        <% end %>
+        <img src="https://is3-ssl.mzstatic.com/image/thumb/Podcasts113/v4/dc/27/a1/dc27a1eb-2307-fe47-342e-6fb84618f5a8/mza_8792713575073991728.jpg/600x600bb.jpg" alt="GOSSIP"/>
+<center>

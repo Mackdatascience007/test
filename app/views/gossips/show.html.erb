@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="card text-center mb-5 mt-5">
+    <h5 class="card-header">Gossip numéro <%= @gossip.id %></h5>
+    <div class="card-body">
+        <h2 class="card-title mb-5">Titre: <%= @gossip.title %></h2>
+        <h3 class="card-text mb-5">Contenu: <%= @gossip.content %></h3>
+        <h3 class="card-text mb-5">Auteur: <%= @gossip.user.first_name %></h3>
+        <h3 class="card-text mb-5">Date de création: <%= @day %>/<%= @month %>/<%= @year %></h3>
+    </div>
+    </div>
+
+    <p><%= link_to "Retourner à la liste de Potins", root_path, :class => "btn btn-primary" %></p>
+    <p><%= link_to "Bio de l'auteur", user_path, :class => "btn btn-primary" %></p>
+</div>

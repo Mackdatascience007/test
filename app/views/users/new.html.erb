@@ -1,0 +1,29 @@
+<h2> Create Account</h2>
+
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+    <%= label_tag 'First name' %>
+    <%= text_field_tag 'first_name', :first_name %>
+
+<br /> <br />
+
+    <%= label_tag 'Last name' %>
+    <%= text_field_tag 'last_name', :last_name %>
+
+<br /> <br />
+
+    <%= label_tag 'Email' %>
+    <%= text_area_tag 'email', :email %>
+
+<br /> <br />
+
+    <%= label_tag 'Password' %>
+    <%= text_area_tag 'password', :password %>
+
+<br /> <br />
+
+    <%= label_tag 'Confirmation Password' %>
+    <%= text_area_tag 'password_confirmation', :password_confirmation %>
+
+<br /> <br />
+    <%= submit_tag "Sign up", class: "btn btn-primary" %>
+<% end %>
